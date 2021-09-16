@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Download</title>
+</head>
+<body>
+	<p id="status"></p>
+	<a href="contoh.docx" style="display: none;" id="linkdownload"><img src="download.jpg" width="10%"></a>
+
+	<script>
+		function download (detik){
+			setTimeout (function(){
+				if(detik<=0){
+					document.getElementById('status').style.display='none';
+					document.getElementById('linkdownload').style.display='inline';
+				}else{
+					document.getElementById('status').innerHTML=detik;
+					detik--;
+					download(detik);
+				}
+			}, 1000);
+		}
+		download(5);
+	</script>
+</body>
+</html>
